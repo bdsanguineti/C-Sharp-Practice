@@ -7,6 +7,9 @@ namespace GradeBook
     {
         static void Main(string[] args) 
         {
+            var book = new Book();
+            book.AddGrade(8.75);
+
             // List<double> grades = new List<double>();
             var grades = new List<double>() {2.4, 5.5, 6.0, 7.5, 3.5};
             grades.Add(8.5);
@@ -16,21 +19,11 @@ namespace GradeBook
             {
                 result += number;
             }
-            result = result / grades.Count;
-            Console.WriteLine($"Average : {result}");
-            
-            if (args.Length > 0)
-            {
-                // Console.WriteLine("Hello " + args[0] + "!.");
-                // Is equivalent. String Interpolation Example
-                Console.WriteLine($"Hello, {args[0]} !.");
-                // In this example if we run: "dotnet run -- Bruce", so the cmd returns Hello, Bruce!
-            }
-            else 
-            {
-                Console.WriteLine("Hello ");
-            }
+            result /= grades.Count;
+            Console.WriteLine($"The Average grade is: {result:N3}"); // result:N3 -> 3 digits after decimal place.
             
         }
+
     }
+    
 }
