@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -5,9 +6,10 @@ namespace GradeBook
     class Book
     {
         // Add Constructor for initializes grades. No return type. Has the same name that the Class.
-        public Book()
+        public Book(string name)
         {
-            grades = new List<double>();
+            this.grades = new List<double>();
+            this.name = name;
         }
 
         public void AddGrade(double grade)
@@ -15,8 +17,11 @@ namespace GradeBook
             grades.Add(grade);
         }
 
-        // Field Declaration
-        List<double> grades;    
+        
+
+        // Fields Declaration
+        private List<double> grades;
+        private string name;
 
     }
 }
