@@ -6,7 +6,7 @@ namespace GradeBook.Test
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookCalculateAnAverageGrade()
         {
             // Arrange
             var book = new Book(""); // Its Legal have a empty name? 
