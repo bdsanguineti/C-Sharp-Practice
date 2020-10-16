@@ -6,6 +6,23 @@ namespace GradeBook.Test
     public class TypeTests
     {
         [Fact]
+        public void Test1()
+        {
+            // I want to check if we can change the name of the book.
+            
+            var book1 = GetBook("Book 1");
+            GetBookSetName(book1, "New name");
+
+            Assert.Equal("New name", book1.Name);
+        }
+        
+        private void GetBookSetName(Book book, string name)
+        {
+            book = new Book(name);
+            book.Name = name;
+        }
+        
+        [Fact]
         public void CanSetNameFromReference()
         {
             // I want to check if we can change the name of the book.
@@ -15,6 +32,10 @@ namespace GradeBook.Test
 
             Assert.Equal("New name", book1.Name);
 
+        }
+        private void SetName(Book book, string name)
+        {
+            book.Name = name;
         }
         
         [Fact]
@@ -51,12 +72,6 @@ namespace GradeBook.Test
         Book GetBook(string name)
         {
             return new Book(name);
-        }
-
-        private void SetName(Book book, string name)
-        {
-            book.Name = name;
-        }
-        
+        }        
     }
 }
