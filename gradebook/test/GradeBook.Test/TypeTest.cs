@@ -6,20 +6,20 @@ namespace GradeBook.Test
     public class TypeTests
     {
         [Fact]
-        public void Test1()
+        public void CSharpCanPassByRef()
         {
             // I want to check if we can change the name of the book.
             
             var book1 = GetBook("Book 1");
-            GetBookSetName(book1, "New name");
+            GetBookSetName(ref book1, "New name"); // Adding Ref KeyWord
 
             Assert.Equal("New name", book1.Name);
+            //  book --reference--> book1 ---reference--> "New Name" 
         }
-        
-        private void GetBookSetName(Book book, string name)
+
+        private void GetBookSetName(ref Book book, string name)
         {
             book = new Book(name);
-            book.Name = name;
         }
         
         [Fact]
