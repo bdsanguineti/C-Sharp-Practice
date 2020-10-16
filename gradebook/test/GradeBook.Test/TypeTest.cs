@@ -6,6 +6,18 @@ namespace GradeBook.Test
     public class TypeTests
     {
         [Fact]
+        public void ValueTypesAlsoPassByValue()
+        {
+            var x = GetInt();
+            Assert.Equal(3, x); // It is correct. x = 3
+        }
+
+        public int GetInt()
+        {
+            return 3;
+        }
+
+        [Fact]
         public void CSharpCanPassByRef()
         {
             // I want to check if we can change the name of the book.

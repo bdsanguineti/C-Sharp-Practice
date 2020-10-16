@@ -4,4 +4,18 @@ obj/
 .vscode/launch.json
 .vscode/launch.json
 .vscode/tasks.json
+bin/*
+settings.json
+/gradebook/src/GradeBook/obj/*
+/gradebook/src/GradeBook/bin/*
 
+.vscode/*
+
+
+gradebook/src/GradeBook/obj/Debug/netcoreapp2.2/GradeBook.csprojAssemblyReference.cache
+gradebook/src/GradeBook/obj/GradeBook.csproj.nuget.dgspec.json
+gradebook/src/GradeBook/obj/GradeBook.csproj.nuget.g.props
+gradebook/src/GradeBook/obj/GradeBook.csproj.nuget.g.targets
+gradebook/src/GradeBook/obj/project.assets.json
+gradebook/src/GradeBook/obj/Debug/netcoreapp2.2/GradeBook.assets.cache
+gradebook/src/GradeBook/obj/Debug/netcoreapp2.2/GradeBook.csprojAssemblyReference.cache
