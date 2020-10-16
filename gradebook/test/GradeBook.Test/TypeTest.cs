@@ -9,7 +9,13 @@ namespace GradeBook.Test
         public void ValueTypesAlsoPassByValue()
         {
             var x = GetInt();
-            Assert.Equal(3, x); // It is correct. x = 3
+            SetInt(x);
+            Assert.Equal(3, x); // x = 3 because, we are passing a copy of the value.
+        }
+
+        public void SetInt(int num)
+        {
+            x = 42;
         }
 
         public int GetInt()
