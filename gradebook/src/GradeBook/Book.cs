@@ -12,14 +12,14 @@ namespace GradeBook
             this.name = name;
         }
 
-        public void AddGrade(double grade)
+        public void addGrade(double grade)
         {
             grades.Add(grade);
         }
 
-        public void ShowStadistics()
+        public Stadistics getStadistics()
         {
-            var acum = 0.0;
+            var result = new Stadistics();            
             var highGrade = double.MinValue;
             var lowerGrade = double.MaxValue;
 
