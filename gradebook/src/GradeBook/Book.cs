@@ -9,7 +9,7 @@ namespace GradeBook
         public Book(string name)
         {
             this.grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         public void addGrade(double grade)
@@ -24,21 +24,22 @@ namespace GradeBook
             result.highValue = double.MinValue;
             result.lowValue = double.MaxValue;            
 
-            foreach(var number in grades)
+            foreach(var grade in grades)
             {
                 // if (number > highGrade) highGrade = number;
-                highGrade = Math.Max(number, highGrade);
-                lowerGrade = Math.Min(number, lowerGrade);
-                acum+= number;
+                result.highValue = Math.Max(grade, result.highValue);
+                result.lowValue = Math.Min(grade, result.lowValue);
+                result.average+= grade;
             }
-            acum/=grades.Count; 
+            result.average/=grades.Count; 
             Console.WriteLine($"The min value is {lowerGrade}, The max Value is {highGrade}, and the Average is {acum}");
+            return result;
             //result /= grades.Count;
-            //Console.WriteLine($"The Average grade is: {result:N3}"); // result:N3 -> 3 digits after decimal place.
+            //Console.WriteLine($"The Average grade is: {result:N3}"); // result:N3 -> 3 digits after decimal place.            
         }
 
         // Fields Declaration
         private List<double> grades;
-        private string name;
+        public string Name; // UperCase Convention: Public Name, Method
     }
 }
