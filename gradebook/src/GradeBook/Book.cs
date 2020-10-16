@@ -19,9 +19,10 @@ namespace GradeBook
 
         public Stadistics getStadistics()
         {
-            var result = new Stadistics();            
-            var highGrade = double.MinValue;
-            var lowerGrade = double.MaxValue;
+            var result = new Stadistics();
+            result.average = 0.0;
+            result.highValue = double.MinValue;
+            result.lowValue = double.MaxValue;            
 
             foreach(var number in grades)
             {
