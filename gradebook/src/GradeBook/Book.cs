@@ -6,12 +6,15 @@ namespace GradeBook
     public class Book
     {
         //Add Constructor for initializes grades. No return type. Has the same name that the Class.
-        public Book(string name)
+        // Constructor method can be overload
+        public Book(string name) 
         {
+            Category = ""; 
             this.grades = new List<double>();
             Name = name;
         }
 
+        
         public void AddGrade(double grade)
         {
             if (grade <= 100 && grade > 0)
@@ -71,5 +74,7 @@ namespace GradeBook
             get; // The backing field is generated automatically.
             private set; 
         }
+
+        readonly string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
     }
 }
