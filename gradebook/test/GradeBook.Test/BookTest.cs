@@ -10,17 +10,19 @@ namespace GradeBook.Test
         {
             // Arrange
             var book = new Book(""); // Its Legal have a empty name? 
-            book.addGrade("23.1");
-            book.addGrade("72.1");
-            book.addGrade("24.1");
+            var result = new Stadistics;
+        
+            book.AddGrade(23.1);
+            book.AddGrade(72.1);
+            book.AddGrade(24.1);
 
             // Act
-            book.getStadistics();
+            book.GetStadistics();
 
             // Assert
-            Assert.Equal(86.3, result.average, 1);
-            Assert.Equal(6.3, result.lowValue, 1);
-            Assert.Equal(76.3, result.hightValue, 1);
+            Assert.Equal(86.3, result.Average, 1);
+            Assert.Equal(6.3, result.LowValue, 1);
+            Assert.Equal(76.3, result.HighValue, 1);
         }
         
     }
