@@ -66,6 +66,23 @@ namespace GradeBook
 
         // Fields Declaration
         private List<double> grades;
-        public string Name; // UperCase Convention: Public Name, Method
+        public string Name // Defining a Property
+        {
+            get
+            {
+                //Code that I want to excecute when someone wants to READ the name property.
+                return name;
+            }
+            set
+            {
+                //Code that I want to excecute when someone wants to SET the name property.
+                if (!string.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+            }
+        }
+
+        public string name;
     }
 }
