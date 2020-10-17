@@ -12,30 +12,30 @@ namespace GradeBook
             Name = name;
         }
 
-        public void addGrade(double grade)
+        public void AddGrade(double grade)
         {
             grades.Add(grade);
         }
 
-        public Stadistics getStadistics()
+        public Stadistics GetStadistics()
         {
             var result = new Stadistics();
-            result.average = 0.0;
-            result.highValue = double.MinValue;
-            result.lowValue = double.MaxValue;            
+            result.Average = 0.0;
+            result.HighValue = double.MinValue;
+            result.LowValue = double.MaxValue;            
 
-            foreach(var grade in grades)
-            {
-                // if (number > highGrade) highGrade = number;
-                result.highValue = Math.Max(grade, result.highValue);
-                result.lowValue = Math.Min(grade, result.lowValue);
-                result.average+= grade;
-            }
-            result.average/=grades.Count; 
-            Console.WriteLine($"The min value is {lowerGrade}, The max Value is {highGrade}, and the Average is {acum}");
+            var index = 0;
+            
+            do                         
+            {                
+                result.HighValue = Math.Max(grades[index], result.HighValue);
+                result.LowValue = Math.Min(grades[index], result.LowValue);
+                result.Average+= grades[index];
+                index++;
+            } while (index < grades.Count);
+
+            result.Average/=grades.Count; 
             return result;
-            //result /= grades.Count;
-            //Console.WriteLine($"The Average grade is: {result:N3}"); // result:N3 -> 3 digits after decimal place.            
         }
 
         // Fields Declaration
