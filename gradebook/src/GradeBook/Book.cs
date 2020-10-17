@@ -73,7 +73,7 @@ namespace GradeBook
         public string Name // Defining a Property
         {
             get; // The backing field is generated automatically.
-            private set; 
+            set; 
         }
 
         public const string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
