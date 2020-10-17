@@ -2,8 +2,8 @@ namespace GradeBook
 {
     public class Stadistics
     {
-        public double average;
-        public double highValue;
-        public double lowValue;
+        public double Average;
+        public double HighValue;
+        public double LowValue;
     }
 }
