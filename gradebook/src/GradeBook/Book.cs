@@ -68,21 +68,8 @@ namespace GradeBook
         private List<double> grades;
         public string Name // Defining a Property
         {
-            get
-            {
-                //Code that I want to excecute when someone wants to READ the name property.
-                return name;
-            }
-            set
-            {
-                //Code that I want to excecute when someone wants to SET the name property.
-                if (!string.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-            }
+            get; // The backing field is generated automatically.
+            private set; 
         }
-
-        public string name;
     }
 }
