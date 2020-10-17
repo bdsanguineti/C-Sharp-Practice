@@ -9,7 +9,8 @@ namespace GradeBook
         // Constructor method can be overload
         public Book(string name) 
         {
-            Category = ""; 
+            
+            // Category = ""; Category is Const. I cant change even in the constructor
             this.grades = new List<double>();
             Name = name;
         }
@@ -75,6 +76,6 @@ namespace GradeBook
             private set; 
         }
 
-        readonly string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
+        public const string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
     }
 }

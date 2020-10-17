@@ -24,7 +24,7 @@ namespace GradeBook
                     var grade = double.Parse(input);
                     book.AddGrade(grade);
                 }
-                catch(ArgumentException ex)                // Exception ex
+                catch(ArgumentException ex)                
                 {
                     Console.WriteLine(ex.Message); 
                 }
@@ -41,7 +41,8 @@ namespace GradeBook
 
             var stats = book.GetStadistics();
 
-            //book.name = "";
+            // Const is Static. 
+            Console.WriteLine(Book.Category); 
 
             Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The lowest grade is {stats.LowValue}");
