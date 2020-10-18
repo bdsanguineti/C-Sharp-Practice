@@ -9,7 +9,7 @@ namespace GradeBook.Test
         public void BookCalculateAnAverageGrade()
         {
             // Arrange
-            var book = new Book(""); // Its Legal have a empty name? 
+            var book = new InMemoryBook(""); // Its Legal have a empty name? 
             var result = new Stadistics;
         
             book.AddGrade(23.1);

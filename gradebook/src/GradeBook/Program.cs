@@ -7,14 +7,15 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new Book("Bruce's Grade Book");
+            var book = new InMemoryBook("Bruce's Grade Book");            
             book.GradeAdded += OnGradeAdded;
+
             EnterGrades(book);
 
             var stats = book.GetStadistics();
 
             // Const is Static. 
-            Console.WriteLine(Book.Category);
+            Console.WriteLine(InMemoryBook.Category);
 
             Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The lowest grade is {stats.LowValue}");
@@ -24,7 +25,7 @@ namespace GradeBook
 
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(InMemoryBook book)
         {
             while (true)
             {
