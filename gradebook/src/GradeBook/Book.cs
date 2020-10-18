@@ -10,9 +10,9 @@ namespace GradeBook
         
         //Add Constructor for initializes grades. No return type. Has the same name that the Class.
         // Constructor method can be overload
-        public Book(string name) 
+        public Book(string name) : base(name) // base class constructor
         {
-            // Category = ""; Category is Const. I cant change even in the constructor
+            
             this.grades = new List<double>();
             Name = name;
         }
