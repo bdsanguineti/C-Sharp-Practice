@@ -8,7 +8,11 @@ namespace GradeBook
         static void Main(string[] args) 
         {
             var book = new Book("Bruce's Grade Book");
-            
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded -= OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
+
             while(true)
             {
                 Console.WriteLine("Enter a grade or 'q' to quit");
@@ -49,16 +53,12 @@ namespace GradeBook
             Console.WriteLine($"The highest grade is {stats.HighValue}");
             Console.WriteLine($"The average grade is {stats.Average:N1}");
             Console.WriteLine($"The Letter grade is {stats.Letter}");
-            //book.showStadistics();
 
-            // I Cant Use a method without instance "Greeting.GreetingPublicVoidMethod();" dont work without a new instance
-            // But work generating a new instance first
-            // Greeting SaludoNewObject = new Greeting();
-            // SaludoNewObject.GreetingPublicVoidMethod();
+        }
 
-            // A static method can be called without instance
-            // Greeting.GreetingPublicStaticMethod();
-
+        static void OnGradeAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("A grade was Added");
         }
 
     }
