@@ -5,6 +5,9 @@ namespace GradeBook
 {
     public class Book
     {
+        // Adding a delegate. 
+        public delegate void GradeAddedDelegate(object sender, EventArgs args); // Object is very basic type.
+
         //Add Constructor for initializes grades. No return type. Has the same name that the Class.
         // Constructor method can be overload
         public Book(string name) 
@@ -21,6 +24,10 @@ namespace GradeBook
             if (grade <= 100 && grade > 0)
             {
                 grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs()); // The first parameter mean "I am the sender"
+                }
             }
             else 
             {
@@ -76,6 +83,7 @@ namespace GradeBook
             set; 
         }
 
+        public event GradeAddedDelegate GradeAdded; // Event keyword Add additional restrictions and capabilities. Every Book will have a GradeAdded event.
         public const string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
     }
 }
