@@ -3,22 +3,19 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+    public class Book : NamedObject
     {
         // Adding a delegate. 
         public delegate void GradeAddedDelegate(object sender, EventArgs args); // Object is very basic type.
-
+        
         //Add Constructor for initializes grades. No return type. Has the same name that the Class.
         // Constructor method can be overload
         public Book(string name) 
         {
-            
             // Category = ""; Category is Const. I cant change even in the constructor
             this.grades = new List<double>();
             Name = name;
         }
-
-        
         public void AddGrade(double grade)
         {
             if (grade <= 100 && grade > 0)
@@ -34,7 +31,6 @@ namespace GradeBook
                 throw new ArgumentException($"The Grade is Invalid {nameof(grade)}.");
             }
         }
-
         public void AddGrade(char letter)
         {
             switch (letter)
@@ -75,14 +71,8 @@ namespace GradeBook
             return result;
         }
 
-        // Fields Declaration
+        // Fields, properties and Events Declaration
         private List<double> grades;
-        public string Name // Defining a Property
-        {
-            get; // The backing field is generated automatically.
-            set; 
-        }
-
         public event GradeAddedDelegate GradeAdded; // Event keyword Add additional restrictions and capabilities. Every Book will have a GradeAdded event.
         public const string Category = "Science"; // Readonly Keyword means that I can only initialize or chage or write in the constructor method.
     }
